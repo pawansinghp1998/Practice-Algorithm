@@ -22,7 +22,7 @@ public class BinaryTree_PostorderIterative {
         second.left=fourth;
         second.right=fifth;
     }
-    public void preorder(TreeNode root)
+    public void postorder(TreeNode root)
     {
         if(root==null) {
             return;
@@ -58,6 +58,6 @@ public class BinaryTree_PostorderIterative {
     {
         BinaryTree_PostorderIterative bt=new BinaryTree_PostorderIterative();
         bt.createBinaryTree();
-        bt.preorder(bt.root);
+        bt.postorder(bt.root);
     }
 }
