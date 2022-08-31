@@ -33,13 +33,13 @@ public static void display(Node node)
         display(node.right);
     }
     public static void main(String[] args) {
-        Integer[] arr={50,25,12,null,null, 37,30,null,null,null,75,62,null,70,null,null,87,null};
+        Integer[] arr={50,25,12,null,null, 37,30,null,null,null,75,62,null,70,null,null,87,null,null};
         Node root=new Node(arr[0],null,null);
         Pair rp=new Pair(root,1);
         Stack<Pair> st=new Stack<>();
         st.push(rp);
         int index=0;
-        while(st.size()>0 && index<arr.length-1){
+        while(st.size()>0){
             Pair top=st.peek();
             if(top.state==1){
                 index ++;
@@ -54,8 +54,6 @@ public static void display(Node node)
                 }
 top.state++;
             }else if (top.state==2){
-if(top.state==2)
-{
     index++;
     if(arr[index]!=null)
     {
@@ -67,9 +65,8 @@ if(top.state==2)
     else{
         top.node.right=null;
     }
-}
-
-            }else{
+    top.state++;
+} else{
                 st.pop();
             }
         }
